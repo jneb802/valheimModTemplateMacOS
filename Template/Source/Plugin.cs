@@ -24,7 +24,6 @@ namespace Template
 
         public void Awake()
         {
-            BepinexConfiguration.Instance.Config = Config;
             Assembly assembly = Assembly.GetExecutingAssembly();
             HarmonyInstance.PatchAll(assembly);
             SetupWatcher();

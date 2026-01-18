@@ -3,12 +3,10 @@
   <Import Project="Environment.props" />
 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <RootNamespace>Template</RootNamespace>
     <AssemblyName>Template</AssemblyName>
-    <AssemblyVersion>0.1.0</AssemblyVersion>
-    <Version>0.1.0</Version>
-    <LangVersion>10.0</LangVersion>
+    <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
@@ -18,7 +16,6 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <AssemblyName>Template.$(Version)</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -30,7 +27,5 @@
     <Optimize>true</Optimize>
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
-
-
 
 </Project>
