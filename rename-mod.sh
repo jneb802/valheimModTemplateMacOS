@@ -49,7 +49,7 @@ echo -e "${GREEN}New author: $NEW_AUTHOR${NC}"
 echo ""
 
 # Create backup
-BACKUP_DIR="../${OLD_MOD_NAME}_backup_$(date +%Y%m%d_%H%M%S)"
+BACKUP_DIR="../${NEW_MOD_NAME}_backup_$(date +%Y%m%d_%H%M%S)"
 echo -e "${BLUE}📦 Creating backup at: $BACKUP_DIR${NC}"
 cp -r . "$BACKUP_DIR"
 
@@ -144,11 +144,10 @@ if [ -f "Template.csproj" ]; then
 fi
 
 # Update solution file if it exists
-if [ -f "../Template.sln" ]; then
-    echo "  📝 Updating: ../Template.sln"
-    replace_in_file "../Template.sln" "Template" "$NEW_MOD_NAME"
-    replace_in_file "../Template.sln" "Template\\Template.csproj" "Template\\$NEW_MOD_NAME.csproj"
-    mv "../Template.sln" "../$NEW_MOD_NAME.sln"
+if [ -f "Template.sln" ]; then
+    echo "  📝 Updating: Template.sln"
+    replace_in_file "Template.sln" "Template" "$NEW_MOD_NAME"
+    mv "Template.sln" "$NEW_MOD_NAME.sln"
 fi
 
 # Generate new GUID for project
